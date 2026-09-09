@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:," />
+  <title>Flower Studies · Lab 01</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="topline"><span>CIS 5660 / LAB 01</span><span>YAO TANG &amp; ZHUOYANG PAN</span></div>
+    <div class="heading">
+      <div><p class="eyebrow">TOOLBOX FUNCTIONS</p><h1>Flower studies<span>.</span></h1></div>
+      <p class="intro">Three small experiments in polar coordinates,<br />periodic motion, and procedural color.</p>
+    </div>
+    <div class="toolbar"><span class="live"><i></i><span id="playback-status">Animating</span></span><div><button id="pause" type="button" aria-pressed="false">Pause</button><button id="restart" type="button">Restart</button></div></div>
+  </header>
+  <main>
+    <article data-shader="pulsing-flower">
+      <div class="canvas-wrap"><canvas aria-label="A red flower pulsing between a circle and twenty petals"></canvas><span class="badge">01 / PULSE</span><p class="error" role="alert" hidden></p></div>
+      <div class="card-heading"><h2>Pulsing flower</h2><span>01</span></div>
+      <p>A quiet circle opens into twenty petals, then folds back into itself.</p>
+      <div class="tags">sin / cos <span>·</span> mix <span>·</span> smoothstep</div>
+      <div class="links"><button class="copy" type="button">Copy shader</button><a href="shaders/pulsing-flower.glsl" target="_blank" rel="noopener">View GLSL ↗</a></div>
+    </article>
+    <article data-shader="spinning-flower">
+      <div class="canvas-wrap"><canvas aria-label="A rotating red five-petal flower with changing size"></canvas><span class="badge">02 / ROTATE</span><p class="error" role="alert" hidden></p></div>
+      <div class="card-heading"><h2>Spinning flower</h2><span>02</span></div>
+      <p>Five petals turn around a shared center, growing and shrinking in time.</p>
+      <div class="tags">atan <span>·</span> angular offset <span>·</span> sin</div>
+      <div class="links"><button class="copy" type="button">Copy shader</button><a href="shaders/spinning-flower.glsl" target="_blank" rel="noopener">View GLSL ↗</a></div>
+    </article>
+    <article data-shader="moonlit-dahlia">
+      <div class="canvas-wrap"><canvas aria-label="A luminous dahlia with turquoise and coral petals and orbiting pollen"></canvas><span class="badge dark">03 / REIMAGINE</span><p class="error" role="alert" hidden></p></div>
+      <div class="card-heading"><h2>Moonlit dahlia</h2><span>03</span></div>
+      <p>Four petal layers counter-rotate beneath a small constellation of pollen.</p>
+      <div class="tags">rotation <span>·</span> layering <span>·</span> gradients</div>
+      <div class="links"><button class="copy" type="button">Copy shader</button><a href="shaders/moonlit-dahlia.glsl" target="_blank" rel="noopener">View GLSL ↗</a></div>
+    </article>
+  </main>
+  <p id="copy-status" role="status" aria-live="polite"></p>
+  <footer><span>FROM A CIRCLE, A GARDEN.</span><span>Fall 2026</span></footer>
+  <script type="module" src="preview.js"></script>
+</body>
+</html>

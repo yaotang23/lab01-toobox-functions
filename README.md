@@ -1,26 +1,31 @@
-# Lab01: Toolbox Functions
+# Lab 01 — Flower Studies
 
-Let's practice using some tool box functions! You may work with a partner for this one.
+**Team members: Yao Tang and Zhuoyang Pan**
 
-# Setup 
+Three animated flowers made with GLSL toolbox functions: polar coordinates, trigonometry, interpolation, and smooth thresholds. Every solution is a standalone Shadertoy **Image** shader using only `iResolution` and `iTime`; no textures or extra buffers are required.
 
-Create a [Shadertoy account](https://www.shadertoy.com/). Either fork this shadertoy, or create a new shadertoy and copy the code from the [Flower Puzzle](https://www.shadertoy.com/view/NsVBzy).
+## Shadertoy demos
 
-# Puzzles
+| Solution | Shadertoy link |
+| --- | --- |
+| 1. Pulsing Flower | [NXtGDr](https://www.shadertoy.com/view/NXtGDr) |
+| 2. Spinning Flower | [N3dGDr](https://www.shadertoy.com/view/N3dGDr) |
+| 3. Moonlit Dahlia (Original Flower) | [fXdGDr](https://www.shadertoy.com/view/fXdGDr) |
 
-Do your best to replicate the following simple graphics:
+![Pulsing Flower, Spinning Flower, and Moonlit Dahlia](screenshots/flower-studies.png)
 
-1. Pulsing Flower
-![75f8b7ade447b2ad49c9f19aa0f190c9](https://user-images.githubusercontent.com/1758825/133500768-45b053c2-1885-4108-84a8-4cbf3f10318d.gif)
+## Solutions
 
-2. Spinning Flower
-![dbd6b5b655de0843869f06d8f9871770](https://user-images.githubusercontent.com/1758825/133485625-8385c7ca-6015-4809-b8ad-3311df071889.gif)
+| Prompt | Shader source | Implementation |
+| --- | --- | --- |
+| 1. Pulsing Flower | [pulsing-flower.glsl](shaders/pulsing-flower.glsl) | A cosine envelope blends a circle into a twenty-petal radial silhouette. |
+| 2. Spinning Flower | [spinning-flower.glsl](shaders/spinning-flower.glsl) | Subtracting time from the polar angle rotates five petals; slower oscillations change their depth and the flower's size. |
+| 3. Original Flower | [moonlit-dahlia.glsl](shaders/moonlit-dahlia.glsl) | Four counter-rotating petal layers with turquoise-to-coral gradients, radial veins, a patterned gold center, a breathing halo, and orbiting pollen. |
 
-3. Modify the base code to create a new flower!
-- Ideas: add additional shapes, create an interior for the flower, change the animation, make your flower explode, add an animated background, use color gradients.
+Coordinates use the canvas height on both axes to preserve the flower's proportions. `smoothstep` and `fwidth` soften silhouette edges at different resolutions. The first two studies use the cream background and red silhouettes of the assignment references.
 
-# Submission
-- Create a pull request to this repository
-- In the README, include the names of both your team members
-- In the README, create a link to your shader toy solutions for these three prompts
-- Make sure all three of your shadertoys are set to UNLISTED or PUBLIC (so we can see them!)
+## References
+
+- [Original lab and submission instructions](ASSIGNMENT.md)
+- [Flower Puzzle](https://www.shadertoy.com/view/NsVBzy), linked by the assignment. The shaders here are standalone implementations of the supplied visual prompts.
+- [The Book of Shaders: Shapes](https://thebookofshaders.com/07/) for polar shapes and smooth thresholds.
